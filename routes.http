@@ -1,4 +1,20 @@
-GET http://localhost:3000/ HTTP/1.1
+GET http://localhost:3001/users HTTP/1.1
 content-type: application/json
 
+POST http://localhost:3001/users HTTP/1.1
+content-type: application/json
 
+{
+    "name": 2,
+    "email": "jonas2@email.com"
+}
+
+PATCH http://localhost:3001/users/769f7285-9dc0-4f5d-aa28-94956f73a1bd HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Jonas 2"
+}
+
+DELETE http://localhost:3001/users/70f3a11b-f66c-43a8-a6fc-d5070bb0eefb HTTP/1.1
+Content-Type: application/application/json
