@@ -3,6 +3,7 @@ import { UsersService } from "./users.service";
 import { CreateUserDto } from "./dtos/create-user.dto";
 import { UpdateUserDto } from "./dtos/update-user.dto";
 import { ApiResponse, ApiTags } from "@nestjs/swagger";
+import { ApiDocGenericPost } from "src/app/common/api-doc-generic-post.decorator";
 
 @ApiTags('Users')
 @Controller('users')
@@ -17,7 +18,7 @@ export class UsersController {
     }
     
     @Post()
-    @ApiResponse({ description: `Ola`})
+    @ApiDocGenericPost('create-user', CreateUserDto)
     create(@Body() body: CreateUserDto) {
         return this.usersService.create(body);
     }
