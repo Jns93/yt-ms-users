@@ -5,8 +5,8 @@ POST http://localhost:3001/users HTTP/1.1
 content-type: application/json
 
 {
-    "name": 2,
-    "email": "jonas2@email.com"
+    "name": "Jonas23",
+    "email": "jonas2222sss3@email.com"
 }
 
 PATCH http://localhost:3001/users/769f7285-9dc0-4f5d-aa28-94956f73a1bd HTTP/1.1

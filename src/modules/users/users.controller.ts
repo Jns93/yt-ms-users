@@ -12,22 +12,24 @@ export class UsersController {
 
     }
 
-    @Get()
-    findAll() {
-        return this.usersService.findAll();
-    }
-    
     @Post()
     @ApiDocGenericPost('create-user', CreateUserDto)
-    create(@Body() body: CreateUserDto) {
-        return this.usersService.create(body);
+    async create(@Body() body: CreateUserDto) {
+        return await this.usersService.create(body);
     }
+
+    @Get()
+    async findAll() {
+        return await this.usersService.findAll();
+    }
+    
+
     @Patch(':id')
-    update(@Param('id') id: string, @Body() updateDto: UpdateUserDto) {
-        return this.usersService.update(id, updateDto);
+    async update(@Param('id') id: string, @Body() updateDto: UpdateUserDto) {
+        return await this.usersService.update(id, updateDto);
     }
     @Delete(':id')
-    delete(@Param('id') id: string) {
-        return this.usersService.delete(id);
+    async delete(@Param('id') id: string) {
+        return await this.usersService.delete(id);
     }
 }
